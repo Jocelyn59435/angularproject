@@ -8,7 +8,7 @@ import { ProductItemComponent } from './product-item/product-item.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CartComponent } from './cart/cart.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
-import { ProductInfoServiceService } from './product-info-service.service';
+import { ProductInfoService } from './product-info.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { ProductInfoServiceService } from './product-info-service.service';
     ProductDetailComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
-  providers: [ProductInfoServiceService],
+  providers: [ProductInfoService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

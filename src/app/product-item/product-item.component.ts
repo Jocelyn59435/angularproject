@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../models/Product';
-import { ProductInfoServiceService } from '../product-info-service.service';
+import { ProductInfoService } from '../product-info.service';
 
 @Component({
   selector: 'app-product-item',
@@ -9,7 +9,7 @@ import { ProductInfoServiceService } from '../product-info-service.service';
 })
 export class ProductItemComponent implements OnInit {
   @Input() product: Product;
-  constructor(private service: ProductInfoServiceService) {
+  constructor(private service: ProductInfoService) {
     this.product = {
       id: 1,
       product_name: '',

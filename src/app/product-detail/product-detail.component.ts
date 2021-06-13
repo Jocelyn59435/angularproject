@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/Product';
-import { ProductInfoServiceService } from '../product-info-service.service';
+import { ProductInfoService } from '../product-info.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -8,10 +8,7 @@ import { ProductInfoServiceService } from '../product-info-service.service';
   styleUrls: ['./product-detail.component.css'],
 })
 export class ProductDetailComponent implements OnInit {
-  constructor(
-    private service: ProductInfoServiceService,
-    public product: Product
-  ) {}
+  constructor(private service: ProductInfoService, public product: Product) {}
 
   ngOnInit(): void {
     this.service.product$.subscribe((data) => (this.product = data));

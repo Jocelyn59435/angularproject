@@ -5,7 +5,7 @@ import { Product } from './models/Product';
 @Injectable({
   providedIn: 'root',
 })
-export class ProductInfoServiceService {
+export class ProductInfoService {
   private product = new Product();
   product$ = new BehaviorSubject<Product>(this.product);
   setProduct(product: Product) {
