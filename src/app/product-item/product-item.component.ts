@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../models/Product';
-import { ProductInfoService } from '../product-info.service';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-product-item',
@@ -9,7 +9,8 @@ import { ProductInfoService } from '../product-info.service';
 })
 export class ProductItemComponent implements OnInit {
   @Input() product: Product;
-  constructor(private service: ProductInfoService) {
+  quantity: number = 0;
+  constructor(private service: DataService) {
     this.product = {
       id: 1,
       product_name: '',
@@ -19,7 +20,15 @@ export class ProductItemComponent implements OnInit {
       description: '',
     };
   }
-  ngOnInit(): void {
-    this.service.changeProductInfo(this.product);
+
+  ngOnInit(): void {}
+
+  onAddToCart(product: Product, quantity: number): void {
+    if (quantity < 1) {
+      alert('Please choose a valid amount.');
+      return;
+    }
+    this.service.addToCart(product, quantity);
+    alert(`${product.product_name} is added with ${quantity}.`);
   }
 }

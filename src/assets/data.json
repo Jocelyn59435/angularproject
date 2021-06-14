@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "product_name": "Lindt Les Grandes Dark Choc & Hazelnut",
+    "product_name": "Lindt Dark Choc",
     "product_price": 5.4,
     "product_category": "Snack",
     "src": "https://shop.coles.com.au/wcsstore/Coles-CAS/images/3/7/5/3759260.jpg",
@@ -49,7 +49,7 @@
   },
   {
     "id": 7,
-    "product_name": "Farmers Union Greek Style Natural Yoghurt",
+    "product_name": "Greek Style Natural Yoghurt",
     "product_price": 5.5,
     "product_category": "Dairy",
     "src": "https://shop.coles.com.au/wcsstore/Coles-CAS/images/5/2/6/5266865.jpg",

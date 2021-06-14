@@ -8,7 +8,8 @@ import { ProductItemComponent } from './product-item/product-item.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CartComponent } from './cart/cart.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
-import { ProductInfoService } from './product-info.service';
+import { CartItemComponent } from './cart-item/cart-item.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,9 +19,10 @@ import { ProductInfoService } from './product-info.service';
     NavbarComponent,
     CartComponent,
     ProductDetailComponent,
+    CartItemComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
-  providers: [ProductInfoService],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
