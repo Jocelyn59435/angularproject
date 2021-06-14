@@ -19,8 +19,7 @@ export class ProductItemComponent implements OnInit {
       description: '',
     };
   }
-  setProduct(product: Product) {
-    this.service.setProduct(product);
+  ngOnInit(): void {
+    this.service.changeProductInfo(this.product);
   }
-  ngOnInit(): void {}
 }

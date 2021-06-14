@@ -1,6 +1,7 @@
-<div class="productContainer">
+<div class="detailContainer">
+    <img src={{product.src}} />
+
     <ul>
-        <li><a routerLink="/productdetail/{{product.id}}"><img src={{product.src}} /></a></li>
         <li>
             <h3>{{product.product_name}}</h3>
         </li>
@@ -13,22 +14,23 @@
         <li>
             <p>Description:&nbsp;&nbsp;</p>{{product.description}}
         </li>
-        <li>
-            <select name="quantity">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-            </select>
-        </li>
+
+        <select name="quantity">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+
         <li>
             <button>Add to Cart</button>
         </li>
     </ul>
+
 </div>

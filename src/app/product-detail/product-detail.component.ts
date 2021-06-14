@@ -8,9 +8,17 @@ import { ProductInfoService } from '../product-info.service';
   styleUrls: ['./product-detail.component.css'],
 })
 export class ProductDetailComponent implements OnInit {
-  constructor(private service: ProductInfoService, public product: Product) {}
+  product: Product = {
+    id: 1,
+    product_name: '',
+    product_price: 1,
+    product_category: '',
+    src: '',
+    description: '',
+  };
+  constructor(private service: ProductInfoService) {}
 
   ngOnInit(): void {
-    this.service.product$.subscribe((data) => (this.product = data));
+    this.service.currentProductInfo.subscribe((data) => (this.product = data));
   }
 }
