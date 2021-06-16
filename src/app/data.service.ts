@@ -47,7 +47,6 @@ export class DataService {
     let index: number = this.cartList.findIndex(
       (c) => (c.product_name = product_name)
     );
-    debugger;
     let singleCost: number =
       this.cartList[index].price / Number(this.cartList[index].quantity);
     console.log(typeof this.cartList[index].price);

@@ -1,0 +1,7 @@
+.firstContainer {
+  display: flex;
+}
+
+.required {
+  color: red;
+}

@@ -4,7 +4,7 @@
         <ul>
             <li>{{cartItem.product_name}}</li>
             <li><span>Price: $</span>{{cartItem.price}}</li>
-            <li><span>Amount: </span><input value={{cartItem.quantity}} name="currentAmount" [(ngModel)]="currentAmount"
+            <li><span>Amount: </span><input type="number" name="currentAmount" [(ngModel)]="currentAmount"
                     (ngModelChange)=changeQuantity($event)></li>
         </ul>
     </div>

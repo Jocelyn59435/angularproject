@@ -1,3 +1,29 @@
-<div class="cartListContainer">
-    <app-cart-item *ngFor="let cartItem of cartList" [cartItem]="cartItem"></app-cart-item>
+<div class="firstContainer">
+    <div class="emptyNotice">
+
+    </div>
+    <div class="cartListContainer">
+        <app-cart-item *ngFor="let cartItem of cartList" [cartItem]="cartItem"></app-cart-item>
+    </div>
+    <div class="formContainer">
+        <form>
+            <div>
+                <div><label for='fname'><span>First Name:</span><span class="required">*</span></label></div>
+                <div><input type="text" name="fname" placeholder="(minimum 3 characters)" /></div>
+            </div>
+            <div>
+                <div><label for='lname'><span>Last Name:</span><span class="required">*</span></label></div>
+                <div><input type="text" name="lname" placeholder="(minimum 3 characters)" /></div>
+            </div>
+            <div>
+                <div><label for='address'><span>Address:</span><span class="required">*</span></label></div>
+                <div><input type="text" name="address" placeholder="(minimum 6 characters)" /></div>
+            </div>
+            <div>
+                <div><label for='cardNumber'><span>Credit card number:</span><span class="required">*</span></label>
+                </div>
+                <div><input type="text" name="cardNumber" placeholder="(16-digit number)" /></div>
+            </div>
+        </form>
+    </div>
 </div>
