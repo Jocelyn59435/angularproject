@@ -15,7 +15,7 @@
             <p>Description:&nbsp;&nbsp;</p>{{product.description}}
         </li>
 
-        <select name="quantity">
+        <select name="quantity" [(ngModel)]="quantity">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -29,7 +29,7 @@
         </select>
 
         <li>
-            <button>Add to Cart</button>
+            <button (click)="onAddToCart(product, quantity)">Add to Cart</button>
         </li>
     </ul>
 

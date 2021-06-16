@@ -1,1 +1,11 @@
-<p>cart-item works!</p>
+<div class="cartItemContainer">
+    <div><img src={{cartItem.src}} /></div>
+    <div>
+        <ul>
+            <li>{{cartItem.product_name}}</li>
+            <li><span>Price: $</span>{{cartItem.price}}</li>
+            <li><span>Amount: </span><input value={{cartItem.quantity}} name="currentAmount" [(ngModel)]="currentAmount"
+                    (ngModelChange)=changeQuantity($event)></li>
+        </ul>
+    </div>
+</div>

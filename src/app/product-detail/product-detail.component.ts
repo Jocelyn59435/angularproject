@@ -9,6 +9,7 @@ import { Product } from '../models/Product';
   styleUrls: ['./product-detail.component.css'],
 })
 export class ProductDetailComponent implements OnInit {
+  quantity: number = 0;
   product: Product = {
     id: 1,
     product_name: '',
@@ -24,5 +25,14 @@ export class ProductDetailComponent implements OnInit {
     this.service.getProducts().subscribe((data) => {
       this.product = data[index];
     });
+  }
+
+  onAddToCart(product: Product, quantity: number): void {
+    if (quantity < 1) {
+      alert('Please choose a valid amount.');
+      return;
+    }
+    this.service.addToCart(product, quantity);
+    alert(`${product.product_name} is added with ${quantity}.`);
   }
 }
