@@ -1,0 +1,25 @@
+.confirm_container {
+  padding: 10rem;
+}
+
+.confirm_container p {
+  padding-bottom: 1rem;
+}
+
+.confirm_container button {
+  height: auto;
+  background: #d44000;
+  border-color: #d44000;
+  border-radius: 20px;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid #d44000;
+  font-size: 1rem;
+  font-family: "Convergence", sans-serif;
+  padding: 0.2rem;
+}
+
+.confirm_container a {
+  text-decoration: none;
+  color: #ffefcf;
+}

@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Product } from './models/Product';
 import { CartItem } from './models/CartItem';
+import { UserInfo } from './models/UserInfo';
 
 @Injectable({
   providedIn: 'root',
@@ -10,6 +11,7 @@ import { CartItem } from './models/CartItem';
 export class DataService {
   cartList: CartItem[] = [];
   totalPrice: number = 0;
+  userInfo: UserInfo = { address: '', first_name: '', total_cost: 0 };
   constructor(private http: HttpClient) {}
 
   getProducts(): Observable<[]> {
@@ -28,18 +30,18 @@ export class DataService {
         quantity: quantityNumber,
         src: product.src,
       });
+      alert(`${product.product_name} is added with ${quantity}.`);
     } else {
       let index: number = this.cartList.findIndex((c) => c.id === product.id);
+      if (this.cartList[index].quantity + quantityNumber > 10) {
+        alert('Sorry, maximum amount is 10, please choose a valid amount.');
+        return;
+      }
       this.cartList[index].quantity += quantityNumber;
       this.cartList[index].current_price +=
         Number(this.cartList[index].quantity) * product.product_price;
+      alert(`${product.product_name} is added with ${quantity}.`);
     }
-
-    this.cartList.map((c) => {
-      console.log(c);
-    });
-
-    console.log(this.cartList.length);
   }
 
   getCartList(): CartItem[] {
@@ -65,5 +67,13 @@ export class DataService {
       return acc + cartItem.current_price;
     }, 0);
     return this.totalPrice;
+  }
+
+  updateUserInfo(currentUserInfo: UserInfo) {
+    this.userInfo = currentUserInfo;
+  }
+
+  getUserInfo() {
+    return this.userInfo;
   }
 }

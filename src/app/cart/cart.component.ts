@@ -15,11 +15,7 @@ export class CartComponent implements OnInit {
   lname: string = '';
   address: string = '';
   cardnumber: string = '';
-  userInfo: UserInfo = {
-    address: ' ',
-    first_name: ' ',
-    total_cost: 0,
-  };
+
   constructor(private service: DataService, private router: Router) {}
 
   ngOnInit(): void {
@@ -30,8 +26,6 @@ export class CartComponent implements OnInit {
   }
 
   isEmptyCart(): boolean {
-    console.log(this.service.getCartList().length);
-    console.log(this.cartList.length);
     return this.service.cartList.length === 0;
   }
 
@@ -43,10 +37,12 @@ export class CartComponent implements OnInit {
   }
 
   checkOut() {
+    let userInfo: UserInfo = {
+      address: this.address,
+      first_name: this.fname,
+      total_cost: this.getTotalCost(),
+    };
+    this.service.updateUserInfo(userInfo);
     this.router.navigateByUrl('/confirmation');
-    this.userInfo.address = this.address;
-    this.userInfo.first_name = this.fname;
-    console.log(this.fname);
-    this.userInfo.total_cost = this.getTotalCost();
   }
 }
