@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { CartItem } from '../models/CartItem';
 import { Router } from '@angular/router';
+import { UserInfo } from '../models/UserInfo';
 
 @Component({
   selector: 'app-cart',
@@ -37,10 +38,10 @@ export class CartComponent implements OnInit {
   }
 
   checkOut() {
-    let userInfo = {
+    let userInfo: UserInfo = {
       address: this.address,
       first_name: this.fname,
-      totalCost: this.getTotalCost(),
+      total_cost: this.getTotalCost(),
     };
     this.router.navigateByUrl('/confirmation', { state: userInfo });
   }
