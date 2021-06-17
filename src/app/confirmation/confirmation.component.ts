@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, Input } from '@angular/core';
 import { UserInfo } from '../models/UserInfo';
 
 @Component({
@@ -8,13 +7,13 @@ import { UserInfo } from '../models/UserInfo';
   styleUrls: ['./confirmation.component.css'],
 })
 export class ConfirmationComponent implements OnInit {
-  userInfo: UserInfo = { address: '', first_name: '', total_cost: 0 };
-  constructor(private router: Router) {
-    console.log(this.router.getCurrentNavigation()?.extras.state);
+  @Input() userInfo: UserInfo = {
+    address: '',
+    first_name: '',
+    total_cost: 0,
+  };
+  constructor() {
+    console.log(this.userInfo.first_name);
   }
-
-  ngOnInit(): void {
-    this.userInfo = this.router.getCurrentNavigation()?.extras
-      .state as unknown as UserInfo;
-  }
+  ngOnInit(): void {}
 }
