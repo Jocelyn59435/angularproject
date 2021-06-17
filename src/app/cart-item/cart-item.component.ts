@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DataService } from '../data.service';
 import { CartItem } from '../models/CartItem';
 
@@ -9,13 +9,16 @@ import { CartItem } from '../models/CartItem';
 })
 export class CartItemComponent implements OnInit {
   currentAmount: number = 0;
+
   @Input() cartItem: CartItem = {
     id: 1,
     product_name: '',
-    price: 1,
+    single_price: 1,
+    current_price: 1,
     quantity: 1,
     src: '',
   };
+  @Output() itemToRemove: EventEmitter<CartItem> = new EventEmitter();
   constructor(private service: DataService) {}
 
   ngOnInit(): void {
@@ -24,6 +27,9 @@ export class CartItemComponent implements OnInit {
 
   changeQuantity(currentAmount: number) {
     this.service.updateCartList(currentAmount, this.cartItem.product_name);
-    console.log(currentAmount);
+  }
+
+  removeItem(cartItem: CartItem): void {
+    this.itemToRemove.emit(cartItem);
   }
 }

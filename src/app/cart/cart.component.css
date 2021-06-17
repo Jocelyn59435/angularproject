@@ -1,7 +1,91 @@
 .firstContainer {
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .required {
   color: red;
+}
+
+.emptyNotice {
+  text-align: center;
+  margin: auto;
+  padding: 3rem;
+}
+
+.emptyNotice img {
+  width: 12rem;
+  padding: 3rem;
+}
+
+.emptyNotice h3 {
+  padding-bottom: 1rem;
+}
+
+.emptyNotice p {
+  padding-bottom: 1rem;
+}
+.emptyNotice button {
+  height: auto;
+  background: #d44000;
+  border-radius: 20px;
+  cursor: pointer;
+  border: #d44000;
+  font-size: 1.1rem;
+  font-family: "Convergence", sans-serif;
+  padding: 0.3rem;
+  width: 45%;
+}
+
+.emptyNotice a {
+  color: #ffefcf;
+}
+
+.cartListContainer {
+  width: 40%;
+}
+
+.cartListContainer h3 {
+  padding: 2rem 10rem 2rem;
+}
+
+.formContainer {
+  width: 35%;
+  padding: 2rem;
+}
+
+.formContainer div {
+  padding: 0.5rem;
+}
+
+.formContainer form input[type="text"] {
+  width: 60%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px dashed #d44000;
+  outline: none;
+}
+
+.formContainer form input[type="submit"] {
+  height: auto;
+  background: #d44000;
+  border-radius: 20px;
+  cursor: pointer;
+  border: #d44000;
+  color: #ffefcf;
+  font-size: 1.1rem;
+  font-family: "Convergence", sans-serif;
+  padding: 0.3rem;
+  width: 30%;
+}
+
+.formContainer form input[type="submit"]:disabled {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+.formContainer p {
+  padding: 0.5rem;
 }

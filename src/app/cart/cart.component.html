@@ -1,29 +1,44 @@
 <div class="firstContainer">
-    <div class="emptyNotice">
-
+    <div class="emptyNotice" *ngIf="isEmptyCart()">
+        <img src="https://image.flaticon.com/icons/png/512/2038/2038854.png" />
+        <h3>Your cart is empty</h3>
+        <p>Continue shopping to browse and search for items.</p>
+        <button><a routerLink="/">Continue Shopping</a></button>
     </div>
-    <div class="cartListContainer">
-        <app-cart-item *ngFor="let cartItem of cartList" [cartItem]="cartItem"></app-cart-item>
+    <div class="cartListContainer" *ngIf="!isEmptyCart()">
+        <app-cart-item *ngFor=" let cartItem of cartList" [cartItem]="cartItem" (itemToRemove)="removeItem($event)">
+        </app-cart-item>
+        <h3>Total Price: {{getTotalCost().toFixed(2)}}</h3>
     </div>
-    <div class="formContainer">
-        <form>
+    <div class="formContainer" *ngIf="!isEmptyCart()">
+        <form #form="ngForm">
             <div>
                 <div><label for='fname'><span>First Name:</span><span class="required">*</span></label></div>
-                <div><input type="text" name="fname" placeholder="(minimum 3 characters)" /></div>
+                <div><input type="text" name="fname" required minlength="3" [(ngModel)]="fname"
+                        placeholder="(minimum 3 characters)" />
+                </div>
             </div>
             <div>
                 <div><label for='lname'><span>Last Name:</span><span class="required">*</span></label></div>
-                <div><input type="text" name="lname" placeholder="(minimum 3 characters)" /></div>
+                <div><input type="text" name="lname" required minlength="3" [(ngModel)]="lname"
+                        placeholder="(minimum 3 characters)" />
+                </div>
             </div>
             <div>
                 <div><label for='address'><span>Address:</span><span class="required">*</span></label></div>
-                <div><input type="text" name="address" placeholder="(minimum 6 characters)" /></div>
+                <div><input type="text" name="address" required minlength="6" [(ngModel)]="address"
+                        placeholder="(minimum 6 characters)" />
+                </div>
             </div>
             <div>
                 <div><label for='cardNumber'><span>Credit card number:</span><span class="required">*</span></label>
                 </div>
-                <div><input type="text" name="cardNumber" placeholder="(16-digit number)" /></div>
+                <div><input type="text" name="cardnumber" required minlength="16" maxlength="16"
+                        [(ngModel)]="cardnumber" placeholder="(16-digit number)" />
+                </div>
             </div>
+            <p>We'll never share your payment details with anyone else.</p>
+            <input type="submit" [disabled]="form.invalid" value="Submit" class="submit" (click)="checkOut()">
         </form>
     </div>
 </div>

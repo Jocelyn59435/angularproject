@@ -1,0 +1,27 @@
+.cartItemContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cartItemContainer img {
+  width: 10rem;
+  padding: 2rem;
+}
+
+.cartItemContainer ul {
+  list-style: none;
+  padding-bottom: 1rem;
+}
+
+.cartItemContainer button {
+  height: auto;
+  background: #d44000;
+  border-radius: 20px;
+  cursor: pointer;
+  border: #d44000;
+  color: #ffefcf;
+  font-size: 1rem;
+  font-family: "Convergence", sans-serif;
+  width: 30%;
+}

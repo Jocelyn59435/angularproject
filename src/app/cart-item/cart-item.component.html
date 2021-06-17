@@ -3,9 +3,10 @@
     <div>
         <ul>
             <li>{{cartItem.product_name}}</li>
-            <li><span>Price: $</span>{{cartItem.price}}</li>
+            <li><span>Price: $</span>{{cartItem.current_price.toFixed(2)}}</li>
             <li><span>Amount: </span><input type="number" name="currentAmount" [(ngModel)]="currentAmount"
                     (ngModelChange)=changeQuantity($event)></li>
         </ul>
+        <button (click)="removeItem(cartItem)">Remove</button>
     </div>
 </div>

@@ -9,6 +9,7 @@ import { CartItem } from './models/CartItem';
 })
 export class DataService {
   cartList: CartItem[] = [];
+  totalPrice: number = 0;
   constructor(private http: HttpClient) {}
 
   getProducts(): Observable<[]> {
@@ -22,14 +23,16 @@ export class DataService {
       this.cartList.push({
         id: product.id,
         product_name: product.product_name,
-        price: product.product_price * quantityNumber,
+        single_price: product.product_price,
+        current_price: Number(product.product_price) * quantityNumber,
         quantity: quantityNumber,
         src: product.src,
       });
     } else {
       let index: number = this.cartList.findIndex((c) => c.id === product.id);
       this.cartList[index].quantity += quantityNumber;
-      this.cartList[index].price += quantityNumber * product.product_price;
+      this.cartList[index].current_price +=
+        Number(this.cartList[index].quantity) * product.product_price;
     }
 
     this.cartList.map((c) => {
@@ -43,19 +46,24 @@ export class DataService {
     return this.cartList;
   }
 
-  updateCartList(currentQuantity: number, product_name: string) {
+  updateCartList(currentQuantity: number, product_name: string): void {
+    if (currentQuantity > 10) {
+      alert('Sorry, maximum amount is 10, please choose a valid amount.');
+      return;
+    }
     let index: number = this.cartList.findIndex(
-      (c) => (c.product_name = product_name)
+      (c) => c.product_name === product_name
     );
-    let singleCost: number =
-      this.cartList[index].price / Number(this.cartList[index].quantity);
-    console.log(typeof this.cartList[index].price);
-    console.log(typeof this.cartList[index].quantity);
-    console.log(typeof singleCost);
-    console.log(singleCost);
-    console.log(Number(this.cartList[index].price));
-    console.log(Number(this.cartList[index].quantity));
-    this.cartList[index].quantity = currentQuantity;
-    this.cartList[index].price = singleCost * Number(currentQuantity);
+    this.cartList[index].quantity = Number(currentQuantity);
+    this.cartList[index].current_price =
+      Number(this.cartList[index].quantity) *
+      Number(this.cartList[index].single_price);
+  }
+
+  getTotalPrice(): number {
+    this.totalPrice = this.cartList.reduce((acc, cartItem) => {
+      return acc + cartItem.current_price;
+    }, 0);
+    return this.totalPrice;
   }
 }
