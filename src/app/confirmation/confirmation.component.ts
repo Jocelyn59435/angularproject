@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { UserInfo } from '../models/UserInfo';
-import { DataService } from '../data.service';
+import { DataService } from '../services/data.service';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-confirmation',
@@ -13,12 +14,15 @@ export class ConfirmationComponent implements OnInit {
     first_name: '',
     total_cost: 0,
   };
-  constructor(private service: DataService) {}
+  constructor(
+    private data_service: DataService,
+    private cart_service: CartService
+  ) {}
   ngOnInit(): void {
-    this.userInfo = this.service.getUserInfo();
+    this.userInfo = this.data_service.getUserInfo();
   }
 
   isEmptyCart(): boolean {
-    return this.service.cartList.length === 0;
+    return this.cart_service.cartList.length === 0;
   }
 }

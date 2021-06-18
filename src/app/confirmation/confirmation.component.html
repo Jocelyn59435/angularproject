@@ -1,17 +1,19 @@
-<div class="confirm_container" *ngIf="!isEmptyCart()">
-    <h3>Hi {{userInfo.first_name}}, your order has been proceed.</h3>
-    <p>Below is your order details:</p>
-    <table>
-        <tr>
-            <th>Address:
-            </th>
-            <td>{{userInfo.address}}</td>
-        </tr>
-        <tr>
-            <th>Total cost:&nbsp;&#36;</th>
-            <td>{{userInfo.total_cost}}</td>
-        </tr>
-    </table>
-    <p>Thanks for shopping with us.</p>
-    <button><a routerLink="/">Back to Homepage</a></button>
+<div class="parent_container">
+    <div class="confirm_container">
+        <h3>Hi {{userInfo.first_name}}, your order has been proceed.</h3>
+        <p>Below is your order details:</p>
+        <table>
+            <tr>
+                <th>Address:
+                </th>
+                <td>{{userInfo.address}}</td>
+            </tr>
+            <tr>
+                <th>Total cost:&nbsp;&#36;</th>
+                <td>{{userInfo.total_cost.toFixed(2)}}</td>
+            </tr>
+        </table>
+        <p>Thanks for shopping with us.</p>
+        <button><a routerLink="/">Back to Homepage</a></button>
+    </div>
 </div>

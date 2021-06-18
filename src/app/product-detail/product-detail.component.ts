@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DataService } from '../data.service';
 import { Product } from '../models/Product';
+import { CartService } from '../services/cart.service';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -18,11 +19,15 @@ export class ProductDetailComponent implements OnInit {
     src: '',
     description: '',
   };
-  constructor(private route: ActivatedRoute, private service: DataService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private cart_service: CartService,
+    private data_service: DataService
+  ) {}
 
   ngOnInit(): void {
     let index = this.route.snapshot.params.id - 1;
-    this.service.getProducts().subscribe((data) => {
+    this.data_service.getProducts().subscribe((data) => {
       this.product = data[index];
     });
   }
@@ -32,6 +37,6 @@ export class ProductDetailComponent implements OnInit {
       alert('Please choose a valid amount.');
       return;
     }
-    this.service.addToCart(product, quantity);
+    this.cart_service.addToCart(product, quantity);
   }
 }

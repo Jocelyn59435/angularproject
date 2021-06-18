@@ -1,3 +1,9 @@
+.parent_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .confirm_container {
   padding: 10rem;
 }
