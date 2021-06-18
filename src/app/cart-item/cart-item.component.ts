@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { DataService } from '../services/data.service';
 import { CartService } from '../services/cart.service';
 import { CartItem } from '../models/CartItem';
 
@@ -20,10 +19,7 @@ export class CartItemComponent implements OnInit {
     src: '',
   };
   @Output() itemToRemove: EventEmitter<CartItem> = new EventEmitter();
-  constructor(
-    private data_service: DataService,
-    private cart_service: CartService
-  ) {}
+  constructor(private cart_service: CartService) {}
 
   ngOnInit(): void {
     this.currentAmount = this.cartItem.quantity;

@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { DataService } from '../services/data.service';
+import { CartService } from '../services/cart.service';
 import { ConfirmationComponent } from './confirmation.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 describe('ConfirmationComponent', () => {
   let component: ConfirmationComponent;
@@ -8,9 +11,10 @@ describe('ConfirmationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ConfirmationComponent ]
-    })
-    .compileComponents();
+      declarations: [ConfirmationComponent],
+      providers: [HttpClient],
+      imports: [BrowserModule, HttpClientModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {
