@@ -4,7 +4,7 @@
     "product_name": "Lindt Dark Choc",
     "product_price": 5.4,
     "product_category": "Snack",
-    "src": "https://shop.coles.com.au/wcsstore/Coles-CAS/images/3/7/5/3759260.jpg",
+    "src": "assets/1.jpg",
     "description": "The Lindt Master Chocolatiers have created this masterpiece using whole hazelnuts, roasted to perfection, mixed with crunchy caramelised hazelnut pieces surrounded by smooth dark chocolate."
   },
   {
@@ -12,7 +12,7 @@
     "product_name": "Bakery Fairy Cupcakes",
     "product_price": 4.5,
     "product_category": "Bakery",
-    "src": "https://shop.coles.com.au/wcsstore/Coles-CAS/images/4/1/4/4147838.jpg",
+    "src": "assets/2.jpg",
     "description": "May Contain TREE NUTS, May Contain PEANUTS, May Contain SULPHITES, Contains CEREALS CONTAINING GLUTEN, Contains MILK, Contains EGG, Contains SOY, May Contain SESAME"
   },
   {
@@ -20,7 +20,7 @@
     "product_name": "Schweppes Soda Water",
     "product_price": 2.5,
     "product_category": "Drink",
-    "src": "https://shop.coles.com.au/wcsstore/Coles-CAS/images/3/0/1/3014770.jpg",
+    "src": "assets/3.jpg",
     "description": "Schweppes Soda Water is available in 4x300mL glass packs, 1.1L PET and 2L PET."
   },
   {
@@ -28,7 +28,7 @@
     "product_name": "Toscano Chocolate Crepes",
     "product_price": 4.7,
     "product_category": "Bakery",
-    "src": "https://shop.coles.com.au/wcsstore/Coles-CAS/images/2/9/0/2902427.jpg",
+    "src": "assets/4.jpg",
     "description": "French Crêpes with a chocolate & Hazelnut filling. Made in the region of Brittan, the origin of French Crêpes."
   },
   {
@@ -36,7 +36,7 @@
     "product_name": "Banana Bread Slices 5pack",
     "product_price": 4.7,
     "product_category": "Bakery",
-    "src": "https://shop.coles.com.au/wcsstore/Coles-CAS/images/3/9/1/3910442.jpg",
+    "src": "assets/5.jpg",
     "description": "Less sugar but same great banana taste, the perfect healthier snack on the go."
   },
   {
@@ -44,7 +44,7 @@
     "product_name": "Frozen Pink Dragonfruit Chunks",
     "product_price": 2.8,
     "product_category": "Frozen",
-    "src": "https://shop.coles.com.au/wcsstore/Coles-CAS/images/3/5/7/3573070.jpg",
+    "src": "assets/6.jpg",
     "description": "Take up your breakfast a notch higher with Creative Gourmet Frozen Pink Dragonfruit Chunks. Make your own dragonfruit smoothies or mix your granola with some dragonfruit chunks for a delicious, fruity taste."
   },
   {
@@ -52,7 +52,7 @@
     "product_name": "Greek Style Natural Yoghurt",
     "product_price": 5.5,
     "product_category": "Dairy",
-    "src": "https://shop.coles.com.au/wcsstore/Coles-CAS/images/5/2/6/5266865.jpg",
+    "src": "assets/7.jpg",
     "description": "Farmers Union Greek style yogurt is perfect with breakfast, in cooking or as a snack. This versatile, healthy and all natural Greek style yogurt will Make Anything Zing! With the goodness of calcium, no artificial colours, flavours or preservatives."
   }
 ]
