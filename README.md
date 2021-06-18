@@ -1,3 +1,15 @@
+# Project Overview
+
+This application (Bene's grocery) privides e-commerce user experience:
+
+- Product List Page: shows available products and their details(product_name, product_price), and users can choose amount then add to cart.
+
+- Product Details Page: show more details about the product, like product_description.
+
+- Shopping Cart Page: show users' cart info and collect their input to proceed the order.
+
+- Order confirmation page: when user submit the checkout form, show the outcome.
+
 # Angularproject
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.3.
